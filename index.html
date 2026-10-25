@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Intergalactic Gazette</title>
+<meta name="description" content="Year 9 English project: an interactive newspaper edition on social approval and The Little Prince. Read and listen to Ammar Rabie's article.">
+<meta name="theme-color" content="#0a1030">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1030'/%3E%3Cpath d='M32 10l5 15 15 5-15 5-5 15-5-15-15-5 15-5z' fill='%23f4c95d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#070b22; --navy:#0d1540; --indigo:#1a2766;
+  --gold:#f4c95d; --gold-soft:#f4c95d33; --coral:#ff8a7a; --teal:#7de0d0;
+  --cream:#f6efe0; --text:#e9e6f5; --muted:#a8aed4; --dim:#7f88bd;
+  --rule:#ffffff24;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --ui:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{background:#070b22}
+.sky{position:fixed;inset:0;z-index:-1;background:radial-gradient(120% 70% at 80% -10%,#2b3a9a55 0%,transparent 60%),radial-gradient(90% 60% at 0% 100%,#6a2a8a33 0%,transparent 60%),linear-gradient(180deg,#0f1a55 0%,#0a1030 45%,#070b22 100%)}
+body{
+  background:transparent;
+  color:var(--text);
+  font-family:var(--body);
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+/* sky */
+a{color:inherit}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:#070b22;border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand svg{width:18px;height:18px;flex:none}
+.nav ul{list-style:none;display:flex;gap:22px;padding:0}
+.nav a.l{font-family:var(--ui);font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s}
+.nav a.l:hover,.nav a.l:focus-visible{color:var(--gold)}
+
+/* hero */
+.hero{padding:clamp(40px,8vw,90px) 0 clamp(56px,9vw,110px);position:relative}
+.hero>.wrap{position:relative;z-index:1}
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
+.dateline{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-family:var(--ui);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  border-top:2px solid var(--gold);border-bottom:1px solid var(--rule);padding:10px 0}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center;margin-top:clamp(24px,4vw,44px)}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(2.6rem,7vw,5rem);line-height:.98;letter-spacing:-.015em;color:var(--cream)}
+h1 em{font-style:italic;font-weight:500;color:var(--gold);display:block;font-size:.5em;letter-spacing:0;margin-bottom:.15em}
+.big-q{font-family:var(--body);font-style:italic;font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--muted);max-width:34ch;margin-top:22px}
+.by{margin-top:34px}
+.by-label{font-family:var(--ui);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.names{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--ui);font-size:.86rem;font-weight:500;padding:7px 14px;border-radius:999px;border:1px solid var(--rule);background:#ffffff0a;color:var(--text)}
+.chip.lead{border-color:var(--gold);background:var(--gold-soft);color:var(--gold);display:inline-flex;align-items:center;gap:7px}
+.chip.lead small{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.tags{display:flex;flex-wrap:wrap;gap:22px;margin-top:22px;font-family:var(--ui);font-size:.8rem;color:var(--muted)}
+.tags b{color:var(--coral);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.66rem;display:block;margin-bottom:2px}
+.tags span span{color:var(--cream);font-size:.95rem;font-family:var(--body)}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:38px;font-family:var(--ui);font-weight:600;font-size:.9rem;
+  color:#1a1300;background:var(--gold);padding:13px 22px;border-radius:999px;text-decoration:none;
+  transition:transform .2s, box-shadow .2s}
+.cta:hover{background:#fff1c4}
+.cta svg{width:16px;height:16px}
+.orbit{width:100%;max-width:360px;justify-self:center;aspect-ratio:1}
+.orbit svg{width:100%;height:100%;overflow:visible}
+.float{animation:float 9s ease-in-out infinite;transform-origin:center}
+@keyframes float{50%{transform:translateY(-10px) rotate(1.5deg)}}
+.spin{animation:spin 60s linear infinite;transform-origin:200px 200px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* article (paper, readable) */
+.paper{border-top:1px solid #ffffff26}
+.article{padding:clamp(34px,6vw,64px) 0 90px}
+.col{width:min(700px,100%);margin-inline:auto}
+.section-label{font-family:var(--ui);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border-top:3px solid var(--gold);padding-top:9px;display:flex;color:#f6efe0;justify-content:space-between;gap:12px}
+.section-label span:last-child{color:var(--coral)}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(2rem,5.2vw,3.3rem);line-height:1.1;letter-spacing:-.01em;margin:20px 0 18px;color:#f6efe0}
+.byline{font-family:var(--ui);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:10px 0;border-top:1px solid #ffffff2e;border-bottom:1px solid #ffffff2e;margin-bottom:26px;color:#f6efe0}
+.byline span{color:#a8aed4;font-weight:400;text-transform:none;letter-spacing:.02em;margin-left:8px}
+.hint{font-family:var(--ui);font-size:.78rem;color:#a8aed4;margin-bottom:22px}
+.story p{font-size:clamp(1.15rem,2.2vw,1.3rem);line-height:1.78;margin-bottom:1.35em;color:#f6efe0}
+.w{cursor:pointer;color:#8b94c8;transition:color .15s}
+.w.said{color:#f6efe0}
+.w.now{background:#ffd84d;box-shadow:0 0 0 2px #ffd84d;border-radius:1px;color:#16130f}
+.w.q{font-style:italic}
+.w:hover{color:#7de0d0}
+h2 .w{color:#8b94c8}
+h2 .w.said{color:#f6efe0}
+.player{position:sticky;bottom:0;z-index:5;margin:34px -18px 0;background:#0d1540;color:#f2ebdb;display:flex;align-items:center;gap:14px;padding:10px 18px;border-top:3px solid var(--gold);box-shadow:0 -1px 0 #ffffff22}
+.play{width:46px;height:46px;border:0;background:#ffd84d;color:#16130f;cursor:pointer;display:grid;place-items:center;flex:none}
+.play:hover{background:#f2ebdb}
+.play svg{width:20px;height:20px}
+.play .pause{display:none}
+.playing .play .pause{display:block}
+.playing .play .go{display:none}
+.t{font-family:var(--ui);font-size:.75rem;font-weight:600;font-variant-numeric:tabular-nums;min-width:36px;text-align:center}
+.scrub{flex:1;min-width:0;-webkit-appearance:none;appearance:none;height:24px;background:transparent;cursor:pointer;--p:0%}
+.scrub::-webkit-slider-runnable-track{height:4px;background:linear-gradient(90deg,#ffd84d var(--p),#f2ebdb44 var(--p))}
+.scrub::-moz-range-track{height:4px;background:#f2ebdb44}
+.scrub::-moz-range-progress{height:4px;background:#ffd84d}
+.scrub::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:18px;background:#f2ebdb;margin-top:-7px;border:0}
+.scrub::-moz-range-thumb{width:12px;height:18px;background:#f2ebdb;border:0;border-radius:0}
+.spd{font-family:var(--ui);font-weight:700;font-size:.72rem;background:transparent;color:#f2ebdb;border:1px solid #f2ebdb77;padding:7px 10px;cursor:pointer}
+.spd:hover{border-color:#ffd84d;color:#ffd84d}
+.sources{margin-top:54px;border-top:1px solid #ffffff2e;color:#d4d7ee;padding-top:10px}
+.sources h3{font-family:var(--ui);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
+.sources ul{list-style:none;padding:0;font-size:.98rem;display:grid;gap:5px}
+footer{border-top:1px solid #ffffff1f;color:#a8aed4;font-family:var(--ui);font-size:.78rem;padding:22px 16px;text-align:center}
+
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr}
+  .orbit{max-width:260px;order:-1;margin-bottom:-6px}
+  .nav ul{gap:16px}
+  .brand span{display:none}
+}
+@media (max-width:520px){
+  .t.total,.spd{display:none}
+  .player{gap:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .float,.spin{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="The Intergalactic Gazette, top">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4l7 21 21 7-21 7-7 21-7-21-21-7 21-7z" fill="#f4c95d"/></svg>
+      <span>The Intergalactic Gazette</span>
+    </a>
+    <ul>
+      <li><a class="l" href="#article">Article</a></li>
+      <li><a class="l" href="#sources">Sources</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="dateline"><span>Year 9 English · 9B–C</span><span>October 2026</span></div>
+      <div class="hero-grid">
+        <div>
+          <h1 class="rv">The Intergalactic Gazette</h1>
+
+          <div class="by rv">
+            <div class="by-label">A project by</div>
+            <div class="names">
+              <span class="chip lead">Ammar Rabie <small>Group Leader</small></span>
+              <span class="chip">Yehia Islam</span>
+              <span class="chip">Yousif Omar</span>
+              <span class="chip">Maher Shareef</span>
+              <span class="chip">Salman Ahmad</span>
+            </div>
+            <div class="tags">
+              <span><b>Issue</b><span>Social Approval</span></span>
+              <span><b>Editorial approach</b><span>Social Columnist</span></span>
+            </div>
+          </div>
+
+          <a class="cta rv" href="#article">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Read &amp; listen
+          </a>
+        </div>
+
+        <div class="orbit rv" aria-hidden="true">
+          <svg viewBox="0 0 400 400" fill="none" stroke="#f6efe0" stroke-width="1.4">
+            <circle cx="200" cy="200" r="52" fill="#f4c95d" stroke="none"/>
+            <circle cx="200" cy="200" r="86" opacity=".55"/>
+            <circle cx="200" cy="200" r="128" opacity=".55"/>
+            <circle cx="200" cy="200" r="170" opacity=".55"/>
+            <circle cx="114" cy="200" r="9" fill="#ff8a7a" stroke="none"/>
+            <circle cx="291" cy="109" r="14" fill="#7de0d0" stroke="none"/>
+            <g transform="translate(262 331)">
+              <circle r="18" fill="#f6efe0" stroke="none"/>
+              <ellipse rx="32" ry="8" transform="rotate(-18)" stroke="#f6efe0"/>
+            </g>
+            <path d="M58 98l2.5 7 7 2.5-7 2.5-2.5 7-2.5-7-7-2.5 7-2.5z" fill="#f6efe0" stroke="none"/>
+            <path d="M352 292l2.5 7 7 2.5-7 2.5-2.5 7-2.5-7-7-2.5 7-2.5z" fill="#f4c95d" stroke="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="paper">
+  <section class="article" id="article" aria-labelledby="headline">
+    <div class="wrap">
+      <div class="col">
+        <div class="section-label"><span>Social Columnist</span><span>The Counter-Perspective</span></div>
+        <h2 id="headline"><span class="w" data-t="0.93">The</span> <span class="w" data-t="3.03">Need</span> <span class="w" data-t="3.26">Of</span> <span class="w" data-t="3.35">Approval:</span> <span class="w" data-t="4.11">Is</span> <span class="w" data-t="4.27">A</span> <span class="w" data-t="4.31">Little</span> <span class="w" data-t="4.62">Social-Approval</span> <span class="w" data-t="5.75">Really</span> <span class="w" data-t="6.04">That</span> <span class="w" data-t="6.23">Bad?</span></h2>
+        <div class="byline">By Ammar Rabie <span>Group leader</span></div>
+        <p class="hint">Press play and follow the highlight. Tap any word to jump to it.</p>
+
+        <div class="story" id="story">
+          <p><span class="w" data-t="6.59">Although</span> <span class="w" data-t="6.90">the</span> <span class="w" data-t="7.06">author</span> <span class="w" data-t="7.43">of</span> <span class="w" data-t="7.59">The</span> <span class="w" data-t="7.66">Little</span> <span class="w" data-t="7.93">Prince</span> <span class="w" data-t="8.43">shows</span> <span class="w" data-t="8.63">that</span> <span class="w" data-t="8.84">any</span> <span class="w" data-t="9.03">desire</span> <span class="w" data-t="9.42">for</span> <span class="w" data-t="9.58">social</span> <span class="w" data-t="9.95">approval</span> <span class="w" data-t="10.56">is</span> <span class="w" data-t="10.66">simply</span> <span class="w" data-t="11.00">foolish,</span> <span class="w" data-t="11.89">refusing</span> <span class="w" data-t="12.40">all</span> <span class="w" data-t="12.57">possible</span> <span class="w" data-t="13.06">forms</span> <span class="w" data-t="13.70">of</span> <span class="w" data-t="13.80">social</span> <span class="w" data-t="14.42">recognition/approval,</span> <span class="w" data-t="15.81">this</span> <span class="w" data-t="16.42">ignores</span> <span class="w" data-t="16.87">the</span> <span class="w" data-t="16.95">natural</span> <span class="w" data-t="17.54">and</span> <span class="w" data-t="17.74">biological</span> <span class="w" data-t="18.39">human</span> <span class="w" data-t="18.68">need</span> <span class="w" data-t="19.04">to</span> <span class="w" data-t="19.17">be</span> <span class="w" data-t="19.29">valued,</span> <span class="w" data-t="20.54">and</span> <span class="w" data-t="20.68">that</span> <span class="w" data-t="20.83">applies</span> <span class="w" data-t="21.25">especially</span> <span class="w" data-t="21.98">in</span> <span class="w" data-t="22.11">modern</span> <span class="w" data-t="22.41">day</span> <span class="w" data-t="22.58">society</span> <span class="w" data-t="23.76">where</span> <span class="w" data-t="23.85">that</span> <span class="w" data-t="24.10">need</span> <span class="w" data-t="24.61">is</span> <span class="w" data-t="24.88">at</span> <span class="w" data-t="25.17">its</span> <span class="w" data-t="25.30">absolute</span> <span class="w" data-t="25.83">peak.</span></p>
+          <p><span class="w" data-t="26.95">For</span> <span class="w" data-t="27.08">example,</span> <span class="w" data-t="27.61">the</span> <span class="w" data-t="27.87">absolute</span> <span class="w" data-t="28.36">need</span> <span class="w" data-t="28.61">for</span> <span class="w" data-t="28.78">a</span> <span class="w" data-t="28.83">little</span> <span class="w" data-t="29.07">social</span> <span class="w" data-t="29.43">approval</span> <span class="w" data-t="30.19">in</span> <span class="w" data-t="30.32">modern</span> <span class="w" data-t="30.64">day</span> <span class="w" data-t="30.77">society</span> <span class="w" data-t="31.93">is</span> <span class="w" data-t="32.01">specifically</span> <span class="w" data-t="32.68">highlighted</span> <span class="w" data-t="33.21">in</span> <span class="w" data-t="33.31">chapter</span> <span class="w" data-t="33.65">4,</span> <span class="w" data-t="34.61">where</span> <span class="w" data-t="34.71">the</span> <span class="w" data-t="34.83">astronomer</span> <span class="w" data-t="35.78">was</span> <span class="w" data-t="36.01">completely</span> <span class="w" data-t="36.81">ignored</span> <span class="w" data-t="37.19">for</span> <span class="w" data-t="37.28">wearing</span> <span class="w" data-t="37.43">regular</span> <span class="w" data-t="37.69">traditional</span> <span class="w" data-t="38.14">clothing,</span> <span class="w" data-t="39.50">but</span> <span class="w q" data-t="40.94">“presented</span> <span class="w q" data-t="41.41">his</span> <span class="w q" data-t="41.50">discovery</span> <span class="w q" data-t="42.03">again</span> <span class="w q" data-t="42.38">in</span> <span class="w q" data-t="42.54">1920,</span> <span class="w q" data-t="43.69">when</span> <span class="w q" data-t="43.81">he</span> <span class="w q" data-t="43.91">dressed</span> <span class="w q" data-t="44.28">elegantly</span> <span class="w q" data-t="44.89">in</span> <span class="w q" data-t="44.95">European</span> <span class="w q" data-t="45.46">attire</span> <span class="w q" data-t="46.23">and</span> <span class="w q" data-t="46.36">this</span> <span class="w q" data-t="46.54">time</span> <span class="w q" data-t="47.03">everybody</span> <span class="w q" data-t="47.59">believed</span> <span class="w q" data-t="47.96">him.”</span> <span class="w" data-t="50.23">This</span> <span class="w" data-t="50.48">shows</span> <span class="w" data-t="50.74">without</span> <span class="w" data-t="51.00">a</span> <span class="w" data-t="51.04">degree</span> <span class="w" data-t="51.39">of</span> <span class="w" data-t="51.45">social</span> <span class="w" data-t="51.84">approval</span> <span class="w" data-t="52.37">or</span> <span class="w" data-t="52.50">confirmation</span> <span class="w" data-t="53.22">from</span> <span class="w" data-t="53.41">society,</span> <span class="w" data-t="54.86">brilliance</span> <span class="w" data-t="55.33">and</span> <span class="w" data-t="55.50">truth</span> <span class="w" data-t="55.97">can</span> <span class="w" data-t="56.16">be</span> <span class="w" data-t="56.25">completely</span> <span class="w" data-t="56.76">ignored,</span> <span class="w" data-t="57.77">this</span> <span class="w" data-t="57.96">displays</span> <span class="w" data-t="58.57">that</span> <span class="w" data-t="58.75">seeking</span> <span class="w" data-t="59.12">approval</span> <span class="w" data-t="59.51">from</span> <span class="w" data-t="59.72">society</span> <span class="w" data-t="60.34">is</span> <span class="w" data-t="60.48">not</span> <span class="w" data-t="60.84">just</span> <span class="w" data-t="61.03">a</span> <span class="w" data-t="61.08">foolish</span> <span class="w" data-t="61.48">reaction,</span> <span class="w" data-t="62.71">but</span> <span class="w" data-t="62.91">rather</span> <span class="w" data-t="63.26">a</span> <span class="w" data-t="63.29">highly</span> <span class="w" data-t="63.65">practical</span> <span class="w" data-t="64.21">tool</span> <span class="w" data-t="64.87">for</span> <span class="w" data-t="65.01">respect</span> <span class="w" data-t="65.60">and</span> <span class="w" data-t="65.72">acceptance</span> <span class="w" data-t="66.43">in</span> <span class="w" data-t="66.58">the</span> <span class="w" data-t="66.66">world.</span></p>
+          <p><span class="w" data-t="67.58">Further</span> <span class="w" data-t="67.76">exploring,</span> <span class="w" data-t="68.68">while</span> <span class="w" data-t="68.84">the</span> <span class="w" data-t="68.98">author</span> <span class="w" data-t="69.25">was</span> <span class="w" data-t="69.42">correctly</span> <span class="w" data-t="69.94">cautious</span> <span class="w" data-t="70.28">about</span> <span class="w" data-t="70.55">public</span> <span class="w" data-t="70.90">judgment,</span> <span class="w" data-t="71.71">calling</span> <span class="w" data-t="72.03">the</span> <span class="w" data-t="72.10">entire</span> <span class="w" data-t="72.65">desire</span> <span class="w" data-t="72.98">for</span> <span class="w" data-t="73.14">recognition</span> <span class="w" data-t="73.69">foolish</span> <span class="w" data-t="74.13">is</span> <span class="w" data-t="74.29">simply</span> <span class="w" data-t="74.71">too</span> <span class="w" data-t="74.89">far.</span> <span class="w" data-t="75.53">In</span> <span class="w" data-t="75.68">modern</span> <span class="w" data-t="76.02">day</span> <span class="w" data-t="76.15">society,</span> <span class="w" data-t="77.26">gaining</span> <span class="w" data-t="77.51">positive</span> <span class="w" data-t="78.02">feedback</span> <span class="w" data-t="78.43">is</span> <span class="w" data-t="78.58">a</span> <span class="w" data-t="78.65">mental</span> <span class="w" data-t="79.05">catalyst</span> <span class="w" data-t="79.66">that</span> <span class="w" data-t="79.94">builds</span> <span class="w" data-t="80.22">self</span> <span class="w" data-t="80.46">confidence,</span> <span class="w" data-t="81.12">increases</span> <span class="w" data-t="81.66">productivity</span> <span class="w" data-t="82.69">and</span> <span class="w" data-t="82.91">further</span> <span class="w" data-t="83.45">builds</span> <span class="w" data-t="83.73">social</span> <span class="w" data-t="84.11">relationships.</span> <span class="w" data-t="85.37">According</span> <span class="w" data-t="85.80">to</span> <span class="w" data-t="85.94">research</span> <span class="w" data-t="86.38">by</span> <span class="w" data-t="86.52">the</span> <span class="w" data-t="86.60">American</span> <span class="w" data-t="87.17">Psychological</span> <span class="w" data-t="87.82">Association,</span> <span class="w" data-t="89.18">positive</span> <span class="w" data-t="89.68">praise</span> <span class="w" data-t="90.12">or</span> <span class="w" data-t="90.25">valuation</span> <span class="w" data-t="90.93">is</span> <span class="w" data-t="91.16">needed</span> <span class="w" data-t="92.19">for</span> <span class="w" data-t="92.34">healthy</span> <span class="w" data-t="92.64">mental</span> <span class="w" data-t="92.95">health.</span> <span class="w" data-t="93.92">Whether</span> <span class="w" data-t="94.27">it&#x27;s</span> <span class="w" data-t="94.43">a</span> <span class="w" data-t="94.46">student</span> <span class="w" data-t="94.90">seeking</span> <span class="w" data-t="95.23">praise</span> <span class="w" data-t="95.51">from</span> <span class="w" data-t="95.66">his</span> <span class="w" data-t="95.82">teacher</span> <span class="w" data-t="96.46">or</span> <span class="w" data-t="96.59">an</span> <span class="w" data-t="96.68">author</span> <span class="w" data-t="97.05">seeking</span> <span class="w" data-t="97.37">praise</span> <span class="w" data-t="97.62">for</span> <span class="w" data-t="97.70">his</span> <span class="w" data-t="97.84">writing,</span> <span class="w" data-t="98.31">social</span> <span class="w" data-t="98.57">recognition/approval</span> <span class="w" data-t="99.95">is</span> <span class="w" data-t="100.10">a</span> <span class="w" data-t="100.17">natural</span> <span class="w" data-t="100.80">biological</span> <span class="w" data-t="101.46">mechanism</span> <span class="w" data-t="102.48">designed</span> <span class="w" data-t="103.00">to</span> <span class="w" data-t="103.06">keep</span> <span class="w" data-t="103.26">us</span> <span class="w" data-t="103.36">connected.</span> <span class="w" data-t="104.20">It&#x27;s</span> <span class="w" data-t="104.35">not</span> <span class="w" data-t="104.48">an</span> <span class="w" data-t="104.55">act</span> <span class="w" data-t="104.76">of</span> <span class="w" data-t="104.90">foolishness</span> <span class="w" data-t="105.42">or</span> <span class="w" data-t="105.50">a</span> <span class="w" data-t="105.55">sign</span> <span class="w" data-t="105.82">of</span> <span class="w" data-t="105.95">moral</span> <span class="w" data-t="106.23">weakness.</span> <span class="w" data-t="107.11">While</span> <span class="w" data-t="107.29">it</span> <span class="w" data-t="107.45">is</span> <span class="w" data-t="107.63">true</span> <span class="w" data-t="107.83">that</span> <span class="w" data-t="108.05">chasing</span> <span class="w" data-t="108.59">mindless</span> <span class="w" data-t="109.33">internet</span> <span class="w" data-t="109.81">clout</span> <span class="w" data-t="110.17">and</span> <span class="w" data-t="110.31">fame</span> <span class="w" data-t="111.05">is</span> <span class="w" data-t="111.17">a</span> <span class="w" data-t="111.20">certain</span> <span class="w" data-t="111.61">trap,</span> <span class="w" data-t="112.51">we</span> <span class="w" data-t="112.82">all</span> <span class="w" data-t="113.21">need</span> <span class="w" data-t="113.46">just</span> <span class="w" data-t="113.69">a</span> <span class="w" data-t="113.72">little</span> <span class="w" data-t="114.15">social</span> <span class="w" data-t="114.55">approval</span> <span class="w" data-t="115.00">to</span> <span class="w" data-t="115.10">continue</span> <span class="w" data-t="115.51">as</span> <span class="w" data-t="115.64">a</span> <span class="w" data-t="115.71">functional</span> <span class="w" data-t="116.37">society.</span> <span class="w" data-t="117.55">Expecting</span> <span class="w" data-t="118.09">humans</span> <span class="w" data-t="118.51">to</span> <span class="w" data-t="118.59">completely</span> <span class="w" data-t="119.42">abandon</span> <span class="w" data-t="119.91">the</span> <span class="w" data-t="120.00">need</span> <span class="w" data-t="120.23">for</span> <span class="w" data-t="120.40">valuation</span> <span class="w" data-t="121.05">is</span> <span class="w" data-t="121.18">not</span> <span class="w" data-t="121.41">only</span> <span class="w" data-t="121.70">unrealistic,</span> <span class="w" data-t="123.05">but</span> <span class="w" data-t="123.35">misunderstands</span> <span class="w" data-t="124.19">the</span> <span class="w" data-t="124.29">problem</span> <span class="w" data-t="124.82">in</span> <span class="w" data-t="124.92">its</span> <span class="w" data-t="125.07">entirety.</span></p>
+        </div>
+
+        <div class="player" id="player" role="group" aria-label="Audio player">
+          <button class="play" id="play" aria-label="Play article audio">
+            <svg class="go" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>
+            <svg class="pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          </button>
+          <span class="t" id="cur">0:00</span>
+          <input class="scrub" id="scrub" type="range" min="0" max="1000" value="0" aria-label="Seek">
+          <span class="t total" id="tot">0:00</span>
+          <button class="spd" id="spd" aria-label="Playback speed">1×</button>
+        </div>
+
+        <div class="sources" id="sources">
+          <h3>Sources</h3>
+          <ul>
+            <li><i>The Little Prince</i> by Antoine de Saint-Exupéry</li>
+            <li>American Psychological Association</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>Written and read by Ammar Rabie · 9B–C</footer>
+
+<audio id="audio" preload="auto" src="ammar-rabie.mp3"></audio>
+
+<script>
+(function(){
+  /* ---------- starfield ---------- */
+  var c=document.getElementById('stars'),x=c.getContext('2d'),S=[],W,H,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function size(){var d=Math.min(devicePixelRatio||1,2);var cw=innerWidth,ch=innerHeight;W=c.width=cw*d;H=c.height=ch*d;
+    var n=Math.round(cw*ch/6500);S=[];
+    for(var i=0;i<n;i++)S.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.3+.3)*d,p:Math.random()*6.28,s:Math.random()*.02+.005,g:Math.random()<.12});}
+  function draw(){x.clearRect(0,0,W,H);
+    for(var i=0;i<S.length;i++){var s=S[i],a=.45+.55*Math.sin(s.p);
+      x.globalAlpha=a*(s.g?1:.75);x.fillStyle=s.g?'#f4c95d':'#fff';x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill();
+      if(!reduce)s.p+=s.s;}
+    x.globalAlpha=1;if(!reduce)requestAnimationFrame(draw);}
+  size();draw();addEventListener('resize',function(){size();if(reduce)draw();});
+
+  /* ---------- reveal ---------- */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  /* ---------- audio sync ---------- */
+  var a=document.getElementById('audio'),play=document.getElementById('play'),player=document.getElementById('player'),
+      scrub=document.getElementById('scrub'),cur=document.getElementById('cur'),tot=document.getElementById('tot'),spd=document.getElementById('spd');
+  var words=[].slice.call(document.querySelectorAll('h2 .w, .story .w'));
+  var times=words.map(function(w){return parseFloat(w.dataset.t)});
+  var paras=[].slice.call(document.querySelectorAll('.story p'));
+  var idx=-1,lastUser=0,OFFSET=0.03,raf=0;
+  function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2)}
+  function find(t){var lo=0,hi=times.length-1,r=-1;while(lo<=hi){var m=(lo+hi)>>1;if(times[m]<=t){r=m;lo=m+1}else hi=m-1}return r}
+  function setIdx(n){
+    if(n===idx)return;
+    var from=Math.min(idx,n),to=Math.max(idx,n);
+    if(Math.abs(n-idx)>3||idx<0){from=0;to=words.length-1}
+    for(var i=Math.max(0,from);i<=to;i++){
+      var w=words[i];
+      w.classList.toggle('said',i<=n);
+      w.classList.toggle('now',i===n);
+    }
+    idx=n;
+    var cw=words[n];
+    paras.forEach(function(p){p.classList.toggle('on',!!cw&&p.contains(cw))});
+    if(cw&&!a.paused&&Date.now()-lastUser>2500){
+      var r=cw.getBoundingClientRect(),h=innerHeight;
+      if(r.top<h*.22||r.bottom>h*.62){
+        cw.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+      }
+    }
+  }
+  function ui(){
+    var t=a.currentTime,d=a.duration||0;
+    setIdx(find(t+OFFSET));
+    if(d){var p=t/d*1000;scrub.value=p;scrub.style.setProperty('--p',(p/10)+'%');}
+    cur.textContent=fmt(t);
+  }
+  function loop(){ui();if(!a.paused)raf=requestAnimationFrame(loop)}
+  a.addEventListener('loadedmetadata',function(){tot.textContent=fmt(a.duration);ui()});
+  if(a.readyState>=1)tot.textContent=fmt(a.duration);
+  a.addEventListener('durationchange',function(){if(a.duration)tot.textContent=fmt(a.duration)});
+  a.addEventListener('play',function(){player.classList.add('playing');play.setAttribute('aria-label','Pause article audio');cancelAnimationFrame(raf);loop()});
+  a.addEventListener('pause',function(){player.classList.remove('playing');play.setAttribute('aria-label','Play article audio')});
+  a.addEventListener('ended',function(){player.classList.remove('playing');setIdx(words.length-1);words[words.length-1].classList.remove('now')});
+  a.addEventListener('seeked',ui);
+  function toggle(){if(a.paused){if(a.ended)a.currentTime=0;a.play()}else a.pause()}
+  play.addEventListener('click',toggle);
+  scrub.addEventListener('input',function(){if(a.duration){a.currentTime=scrub.value/1000*a.duration;idx=-2;ui()}});
+  spd.addEventListener('click',function(){var r=[1,1.25,1.5,.75],n=r[(r.indexOf(a.playbackRate)+1)%r.length];a.playbackRate=n;spd.textContent=n+'×'});
+  document.querySelector('.article').addEventListener('click',function(e){
+    var w=e.target.closest('.w');if(!w)return;
+    a.currentTime=Math.max(0,parseFloat(w.dataset.t)-.02);idx=-2;ui();if(a.paused)a.play();
+  });
+  ['wheel','touchmove'].forEach(function(ev){addEventListener(ev,function(){lastUser=Date.now()},{passive:true})});
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;if(t==='INPUT'||t==='BUTTON'||t==='A')return;
+    if(e.code==='Space'){e.preventDefault();toggle()}
+    else if(e.code==='ArrowRight'){a.currentTime=Math.min(a.duration,a.currentTime+5)}
+    else if(e.code==='ArrowLeft'){a.currentTime=Math.max(0,a.currentTime-5)}
+  });
+})();
+</script>
+</body>
+</html>
