@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Intergalactic Gazette</title>
-<meta name="description" content="Year 9 English project: an interactive newspaper edition on social approval and The Little Prince. Read and listen to Ammar Rabie's article.">
+<meta name="description" content="Year 9 English project: an interactive newspaper edition on social approval and The Little Prince. Read the articles and listen to them in order.">
 <meta name="theme-color" content="#0a1030">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1030'/%3E%3Cpath d='M32 10l5 15 15 5-15 5-5 15-5-15-15-5 15-5z' fill='%23f4c95d'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,6 +134,21 @@ footer{border-top:1px solid #ffffff1f;color:#a8aed4;font-family:var(--ui);font-s
   .float,.spin{animation:none}
   .rv{opacity:1;transform:none;transition:none}
 }
+
+/* ---- edition ---- */
+.art{scroll-margin-top:76px}
+.art+.art{margin-top:64px;padding-top:56px;border-top:1px solid var(--rule)}
+.soon{font-family:var(--ui);font-style:normal;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#a8aed4;border:1px solid #ffffff33;border-radius:999px;padding:3px 9px;margin-left:8px;white-space:nowrap}
+.lede{font-style:italic;font-size:1.08rem;line-height:1.6;margin:-4px 0 26px;color:#f6efe0}
+.later{margin-top:64px;padding-top:30px;border-top:1px solid var(--rule);font-family:var(--ui);font-size:.82rem;color:#a8aed4;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.later b{color:#f6efe0;font-weight:600}
+.meta{min-width:0;flex:none;max-width:34%;display:flex;flex-direction:column;line-height:1.25}
+.meta small{font-family:var(--ui);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#a8aed4}
+.meta span{font-family:var(--ui);font-size:.8rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.skip{width:32px;height:32px;border:0;border-radius:50%;background:transparent;color:#f6efe0;cursor:pointer;display:grid;place-items:center;flex:none}
+.skip:hover{color:#ffd84d}
+.skip svg{width:18px;height:18px}
+@media (max-width:520px){.meta{display:none}.skip{width:28px}}
 </style>
 </head>
 <body>
@@ -146,7 +161,7 @@ footer{border-top:1px solid #ffffff1f;color:#a8aed4;font-family:var(--ui);font-s
       <span>The Intergalactic Gazette</span>
     </a>
     <ul>
-      <li><a class="l" href="#article">Article</a></li>
+      <li><a class="l" href="#a1">Articles</a></li>
       <li><a class="l" href="#sources">Sources</a></li>
     </ul>
   </div>
@@ -175,7 +190,7 @@ footer{border-top:1px solid #ffffff1f;color:#a8aed4;font-family:var(--ui);font-s
             </div>
           </div>
 
-          <a class="cta rv" href="#article">
+          <a class="cta rv" href="#a1">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
             Read &amp; listen
           </a>
@@ -187,46 +202,87 @@ footer{border-top:1px solid #ffffff1f;color:#a8aed4;font-family:var(--ui);font-s
   </section>
 
   <div class="paper">
-  <section class="article" id="article" aria-labelledby="headline">
+  <section class="article" id="articles" aria-label="Articles">
     <div class="wrap">
       <div class="col">
-        <div class="section-label"><span>Social Columnist</span><span>The Counter-Perspective</span></div>
-        <h2 id="headline"><span class="w" data-t="0.93">The</span> <span class="w" data-t="3.03">Need</span> <span class="w" data-t="3.26">Of</span> <span class="w" data-t="3.35">Approval:</span> <span class="w" data-t="4.11">Is</span> <span class="w" data-t="4.27">A</span> <span class="w" data-t="4.31">Little</span> <span class="w" data-t="4.62">Social-Approval</span> <span class="w" data-t="5.75">Really</span> <span class="w" data-t="6.04">That</span> <span class="w" data-t="6.23">Bad?</span></h2>
-        <div class="byline">By Ammar Rabie <span>Group leader</span></div>
 
-        <div class="story" id="story">
+      <article class="art" id="a1" data-author="Yousif Omar" data-n="1">
+        <div class="section-label"><span>Social Columnist</span><span>Article 1 · The Modern Problem</span></div>
+        <h2>Are We Living For Likes?</h2>
+        <div class="byline">By Yousif Omar <em class="soon">Voice coming soon</em></div>
+        
+        <div class="story">
+          <p>Modern society has become increasingly obsessed with consuming praise, digital likes, reactions and the need of superficial things. This is causing a serious decline in productivity and athleticism ; the incline of valuable attention and shortened attention span. This is shown through quote in the novel The Little Prince when Antoine de Saint-Exupéry mentions “But the conceited man didn’t hear him. Conceited men only hear praise.”</p>
+          <p>The word "only hear" emphasises the conceited man's constant obsession for admiration, suggesting that he abstracts anything that doesn't suit his need. His behavior reveals how demanding the praise is ; although unnecessary, it can prevent individuals from appreciating the substantial values of communication and experiences. Upon closer inspection, this also refers to modern social media, as it prompts society to seek approval/validation via likes, followers and positive comments.</p>
+          <p>Furthermore, some individuals might be driven on earning digital approval (as it might be artificial) to neglect essential responsibilities, resulting in procrastination and reduced productivity. Moreover, Constant comparison of themselves with others online is contributing to increase of anxiety and dissatisfaction. The endless stream of short form content makes attention more valuable and harder to get it, and it makes more difficult for people to maintain their attention on longer tasks. Correspondingly, the excessive time consumed leaves lower opportunities for physical activities.</p>
+          <p>Through the conceited man, Antoine de Saint-Exupéry criticises the superficial desire for admiration and praise ; exposing the limitations of judging importance based on the bias of society. His portrayal remains relevant to this day since digital popularity has diminished attention and it can appear more valuable than personal growth, inseparable relationships and real life achievements. Therefore, The Little Prince reminds readers the self-worth shouldn't be dependant on external validation. Rather than seeking praise, individuals should focus on developing their abilities, building deep emotional bonds, and seeing the world through the heart rather than the eyes.</p>
+        </div>
+      </article>
+      <article class="art" id="a2" data-author="Maher Shareef" data-n="2">
+        <div class="section-label"><span>Social Columnist</span><span>Article 2 · The Author’s Criticism</span></div>
+        <h2>The Conceited Man: The Need for Approval</h2>
+        <div class="byline">By Maher Shareef <em class="soon">Voice coming soon</em></div>
+        
+        <div class="story">
+          <p>In <i>The Little Prince</i> by Antoine de Saint-Exupéry, the Little Prince visits a planet inhabited by a conceited man who believes that everyone should admire him. When the Little Prince arrives, the man asks him to clap so that he can bow and lift his hat as a sign of appreciation. He enjoys receiving praise, but he shows little interest in understanding the Little Prince or building a meaningful friendship with him. Through this character, the author shows how vanity can prevent people from forming real connections with others.</p>
+          <p>The conceited man represents people who are so focused on themselves that they depend on others to feel important. He wants to be admired, yet he never questions whether he deserves the attention he demands. The fact that he lives alone on his planet makes his behavior even more ironic because he wants to be seen as special without having anyone to compare himself to. Through this example, the author encourages readers to question the importance people place on praise and public attention.</p>
+          <p>This idea is still relevant today, especially in schools and social groups. Some people try to appear more talented, popular, or successful so that others will admire them. They may hide their mistakes or agree with everyone just to fit in. Like the conceited man, they risk caring more about others’ opinions than their own values.</p>
+          <p>However, receiving praise is not necessarily harmful. Encouragement can help people feel confident and appreciated. The problem begins when a person’s self-worth depends entirely on other people’s opinions. The author reminds us that real value comes from our character, actions, and relationships rather than the attention we receive. Ultimately, the story teaches us to develop confidence in ourselves instead of constantly seeking approval from others.</p>
+        </div>
+      </article>
+      <article class="art" id="a3" data-author="Yehia Islam" data-n="3" data-audio="yehia-islam.mp3">
+        <div class="section-label"><span>Social Columnist</span><span>Article 3 · The Psychological Trap</span></div>
+        <h2>Social Approval: The Psychological Trap</h2>
+        <div class="byline">By Yehia Islam </div>
+        <p class="lede"><span class="w" data-t="0.00">I</span> <span class="w" data-t="0.08">am</span> <span class="w" data-t="0.21">Yehia</span> <span class="w" data-t="0.49">Islam,</span> <span class="w" data-t="0.87">and</span> <span class="w" data-t="0.97">this</span> <span class="w" data-t="1.18">is</span> <span class="w" data-t="1.26">my</span> <span class="w" data-t="1.46">point</span> <span class="w" data-t="1.91">of</span> <span class="w" data-t="2.01">view</span> <span class="w" data-t="2.78">of</span> <span class="w" data-t="3.23">the</span> <span class="w" data-t="3.41">social</span> <span class="w" data-t="3.83">approval,</span> <span class="w" data-t="4.57">the</span> <span class="w" data-t="4.68">psychological</span> <span class="w" data-t="5.63">trap.</span></p>
+        <div class="story">
+          <p><span class="w" data-t="7.55">In</span> <span class="w" data-t="7.73">my</span> <span class="w" data-t="7.92">opinion,</span> <span class="w" data-t="8.43">the</span> <span class="w" data-t="8.55">little</span> <span class="w" data-t="8.83">prince</span> <span class="w" data-t="9.16">by</span> <span class="w" data-t="9.52">Antoine</span> <span class="w" data-t="10.17">de</span> <span class="w" data-t="10.37">Saint-exupery</span> <span class="w" data-t="12.64">teaches</span> <span class="w" data-t="12.98">us</span> <span class="w" data-t="13.25">an</span> <span class="w" data-t="13.37">important</span> <span class="w" data-t="14.10">lesson</span> <span class="w" data-t="14.42">about</span> <span class="w" data-t="14.70">the</span> <span class="w" data-t="14.93">psychology</span> <span class="w" data-t="15.54">trap</span> <span class="w" data-t="16.21">and</span> <span class="w" data-t="16.39">how</span> <span class="w" data-t="16.56">people</span> <span class="w" data-t="16.88">think</span> <span class="w" data-t="17.33">and</span> <span class="w" data-t="17.64">behave.</span> <span class="w" data-t="18.58">I</span> <span class="w" data-t="18.71">believe</span> <span class="w" data-t="19.05">the</span> <span class="w" data-t="19.17">story</span> <span class="w" data-t="19.57">shows</span> <span class="w" data-t="19.90">how</span> <span class="w" data-t="20.41">people</span> <span class="w" data-t="20.90">can</span> <span class="w" data-t="21.20">become</span> <span class="w" data-t="21.56">trapped</span> <span class="w" data-t="21.87">by</span> <span class="w" data-t="22.05">their</span> <span class="w" data-t="22.27">own</span> <span class="w" data-t="22.60">thoughts</span> <span class="w" data-t="23.48">and</span> <span class="w" data-t="23.64">focus</span> <span class="w" data-t="24.16">too</span> <span class="w" data-t="24.38">much</span> <span class="w" data-t="24.64">on</span> <span class="w" data-t="24.80">things</span> <span class="w" data-t="25.11">that</span> <span class="w" data-t="25.28">do</span> <span class="w" data-t="25.48">not</span> <span class="w" data-t="25.77">really</span> <span class="w" data-t="26.16">matter.</span> <span class="w" data-t="26.85">For</span> <span class="w" data-t="27.01">example,</span> <span class="w" data-t="27.93">the</span> <span class="w" data-t="28.01">king</span> <span class="w" data-t="28.30">wants</span> <span class="w" data-t="28.55">to</span> <span class="w" data-t="28.65">control</span> <span class="w" data-t="29.07">everything,</span> <span class="w" data-t="29.78">the</span> <span class="w" data-t="29.89">businessman</span> <span class="w" data-t="30.51">is</span> <span class="w" data-t="30.62">obsessed</span> <span class="w" data-t="31.04">with</span> <span class="w" data-t="31.17">owning</span> <span class="w" data-t="31.56">stars,</span> <span class="w" data-t="32.80">and</span> <span class="w" data-t="33.25">the</span> <span class="w" data-t="33.39">vain</span> <span class="w" data-t="33.77">man</span> <span class="w" data-t="34.00">always</span> <span class="w" data-t="34.63">wants</span> <span class="w" data-t="35.12">people</span> <span class="w" data-t="35.65">to</span> <span class="w" data-t="35.95">admire</span> <span class="w" data-t="36.39">him.</span> <span class="w" data-t="37.11">I</span> <span class="w" data-t="37.63">think</span> <span class="w" data-t="38.00">these</span> <span class="w" data-t="38.19">characters</span> <span class="w" data-t="38.63">represent</span> <span class="w" data-t="39.36">people</span> <span class="w" data-t="39.69">in</span> <span class="w" data-t="39.90">real</span> <span class="w" data-t="40.15">life</span> <span class="w" data-t="40.38">who</span> <span class="w" data-t="40.70">care</span> <span class="w" data-t="41.06">too</span> <span class="w" data-t="41.36">much</span> <span class="w" data-t="41.63">about</span> <span class="w" data-t="41.85">power,</span> <span class="w" data-t="42.61">money,</span> <span class="w" data-t="43.12">and</span> <span class="w" data-t="43.27">what</span> <span class="w" data-t="43.48">others</span> <span class="w" data-t="43.63">think</span> <span class="w" data-t="44.16">of</span> <span class="w" data-t="44.35">them.</span> <span class="w" data-t="45.10">They</span> <span class="w" data-t="45.19">forget</span> <span class="w" data-t="45.58">to</span> <span class="w" data-t="45.79">enjoy</span> <span class="w" data-t="46.15">life</span> <span class="w" data-t="46.74">and</span> <span class="w" data-t="46.99">appreciate</span> <span class="w" data-t="47.78">the</span> <span class="w" data-t="47.95">people</span> <span class="w" data-t="48.46">around</span> <span class="w" data-t="48.82">them.</span></p>
+          <p><span class="w" data-t="49.27">From</span> <span class="w" data-t="49.49">my</span> <span class="w" data-t="49.77">point</span> <span class="w" data-t="50.10">of</span> <span class="w" data-t="50.19">view,</span> <span class="w" data-t="50.43">the</span> <span class="w" data-t="50.91">Little</span> <span class="w" data-t="51.16">Prince</span> <span class="w" data-t="51.55">is</span> <span class="w" data-t="51.61">different</span> <span class="w" data-t="52.36">because</span> <span class="w" data-t="52.90">he</span> <span class="w" data-t="53.14">tries</span> <span class="w" data-t="53.44">to</span> <span class="w" data-t="53.60">understand</span> <span class="w" data-t="54.19">the</span> <span class="w" data-t="54.27">world</span> <span class="w" data-t="54.62">and</span> <span class="w" data-t="55.07">discover</span> <span class="w" data-t="55.91">what</span> <span class="w" data-t="56.32">makes</span> <span class="w" data-t="56.74">life</span> <span class="w" data-t="57.10">meaningful.</span> <span class="w" data-t="58.34">One</span> <span class="w" data-t="58.66">part</span> <span class="w" data-t="58.94">of</span> <span class="w" data-t="59.02">the</span> <span class="w" data-t="59.11">story</span> <span class="w" data-t="60.00">that</span> <span class="w" data-t="60.65">I</span> <span class="w" data-t="60.78">find</span> <span class="w" data-t="61.17">important</span> <span class="w" data-t="61.85">is</span> <span class="w" data-t="62.10">his</span> <span class="w" data-t="62.29">relationship</span> <span class="w" data-t="63.00">with</span> <span class="w" data-t="63.39">the</span> <span class="w" data-t="63.62">rose.</span> <span class="w" data-t="64.16">At</span> <span class="w" data-t="64.34">first,</span> <span class="w" data-t="65.42">he</span> <span class="w" data-t="65.62">does</span> <span class="w" data-t="65.77">not</span> <span class="w" data-t="65.95">fully</span> <span class="w" data-t="66.27">understand</span> <span class="w" data-t="66.89">her,</span> <span class="w" data-t="67.42">but</span> <span class="w" data-t="67.68">later</span> <span class="w" data-t="68.35">he</span> <span class="w" data-t="68.51">realizes</span> <span class="w" data-t="69.51">that</span> <span class="w" data-t="69.78">she</span> <span class="w" data-t="70.41">is</span> <span class="w" data-t="70.49">special</span> <span class="w" data-t="70.90">to</span> <span class="w" data-t="71.01">him</span> <span class="w" data-t="71.43">because</span> <span class="w" data-t="71.74">he</span> <span class="w" data-t="71.88">has</span> <span class="w" data-t="72.02">spent</span> <span class="w" data-t="72.37">time</span> <span class="w" data-t="72.66">caring</span> <span class="w" data-t="73.07">for</span> <span class="w" data-t="73.36">her.</span> <span class="w" data-t="74.03">This</span> <span class="w" data-t="74.21">makes</span> <span class="w" data-t="74.50">me</span> <span class="w" data-t="74.65">understand</span> <span class="w" data-t="75.41">that</span> <span class="w" data-t="75.75">love</span> <span class="w" data-t="76.06">is</span> <span class="w" data-t="76.20">not</span> <span class="w" data-t="76.62">only</span> <span class="w" data-t="77.01">about</span> <span class="w" data-t="77.34">words</span> <span class="w" data-t="78.07">but</span> <span class="w" data-t="78.33">also</span> <span class="w" data-t="78.73">about</span> <span class="w" data-t="78.96">the</span> <span class="w" data-t="79.10">time</span> <span class="w" data-t="79.40">and</span> <span class="w" data-t="79.55">effort</span> <span class="w" data-t="79.91">we</span> <span class="w" data-t="80.04">give</span> <span class="w" data-t="80.32">to</span> <span class="w" data-t="80.53">others.</span> <span class="w" data-t="81.01">I</span> <span class="w" data-t="81.19">also</span> <span class="w" data-t="81.56">think</span> <span class="w" data-t="81.85">the</span> <span class="w" data-t="82.12">fox</span> <span class="w" data-t="82.47">teaches</span> <span class="w" data-t="83.01">a</span> <span class="w" data-t="83.12">valuable</span> <span class="w" data-t="83.65">lesson</span> <span class="w" data-t="84.12">about</span> <span class="w" data-t="84.47">friendship</span> <span class="w" data-t="85.03">because</span> <span class="w" data-t="85.58">he</span> <span class="w" data-t="85.71">explains</span> <span class="w" data-t="86.19">that</span> <span class="w" data-t="86.81">building</span> <span class="w" data-t="87.34">a</span> <span class="w" data-t="87.48">relationship</span> <span class="w" data-t="88.07">requires</span> <span class="w" data-t="88.42">patience,</span> <span class="w" data-t="89.13">trust,</span> <span class="w" data-t="89.99">and</span> <span class="w" data-t="90.16">care.</span></p>
+          <p><span class="w" data-t="91.04">In</span> <span class="w" data-t="91.18">my</span> <span class="w" data-t="91.37">opinion,</span> <span class="w" data-t="92.33">the</span> <span class="w" data-t="92.43">psychology</span> <span class="w" data-t="93.28">trap</span> <span class="w" data-t="93.50">can</span> <span class="w" data-t="93.91">happen</span> <span class="w" data-t="94.63">in</span> <span class="w" data-t="94.76">our</span> <span class="w" data-t="94.90">daily</span> <span class="w" data-t="95.26">lives</span> <span class="w" data-t="95.52">when</span> <span class="w" data-t="96.62">we</span> <span class="w" data-t="97.71">compare</span> <span class="w" data-t="98.09">ourselves</span> <span class="w" data-t="98.63">to</span> <span class="w" data-t="98.76">others</span> <span class="w" data-t="99.36">or</span> <span class="w" data-t="99.59">try</span> <span class="w" data-t="99.92">too</span> <span class="w" data-t="100.37">hard</span> <span class="w" data-t="100.72">to</span> <span class="w" data-t="100.82">impress</span> <span class="w" data-t="101.31">people.</span> <span class="w" data-t="102.12">Sometimes,</span> <span class="w" data-t="102.87">we</span> <span class="w" data-t="103.00">focus</span> <span class="w" data-t="103.43">on</span> <span class="w" data-t="103.57">being</span> <span class="w" data-t="103.76">successful</span> <span class="w" data-t="104.37">or</span> <span class="w" data-t="104.85">popular</span> <span class="w" data-t="105.71">instead</span> <span class="w" data-t="106.06">of</span> <span class="w" data-t="106.16">being</span> <span class="w" data-t="106.42">happy</span> <span class="w" data-t="107.25">with</span> <span class="w" data-t="107.48">what</span> <span class="w" data-t="107.72">we</span> <span class="w" data-t="107.92">already</span> <span class="w" data-t="108.18">have.</span> <span class="w" data-t="108.62">The</span> <span class="w" data-t="108.73">story</span> <span class="w" data-t="108.94">reminds</span> <span class="w" data-t="109.30">me</span> <span class="w" data-t="109.43">that</span> <span class="w" data-t="109.69">we</span> <span class="w" data-t="110.45">should</span> <span class="w" data-t="110.70">not</span> <span class="w" data-t="110.97">let</span> <span class="w" data-t="111.78">society</span> <span class="w" data-t="112.94">control</span> <span class="w" data-t="113.92">our</span> <span class="w" data-t="114.10">thoughts</span> <span class="w" data-t="114.77">or</span> <span class="w" data-t="115.04">decide</span> <span class="w" data-t="115.45">what</span> <span class="w" data-t="115.65">makes</span> <span class="w" data-t="115.93">us</span> <span class="w" data-t="116.05">happy.</span> <span class="w" data-t="116.88">Instead,</span> <span class="w" data-t="117.80">we</span> <span class="w" data-t="117.95">should</span> <span class="w" data-t="118.08">focus</span> <span class="w" data-t="118.51">on</span> <span class="w" data-t="118.63">our</span> <span class="w" data-t="118.73">values,</span> <span class="w" data-t="119.76">our</span> <span class="w" data-t="119.91">friendships,</span> <span class="w" data-t="120.96">and</span> <span class="w" data-t="121.19">the</span> <span class="w" data-t="121.28">people</span> <span class="w" data-t="121.69">who</span> <span class="w" data-t="121.99">truly</span> <span class="w" data-t="122.39">care</span> <span class="w" data-t="122.70">about</span> <span class="w" data-t="123.02">us.</span> <span class="w" data-t="123.59">Overall,</span> <span class="w" data-t="124.48">I</span> <span class="w" data-t="124.59">believe</span> <span class="w" data-t="124.89">the</span> <span class="w" data-t="125.03">little</span> <span class="w" data-t="125.27">prince</span> <span class="w" data-t="125.74">teaches</span> <span class="w" data-t="126.08">us</span> <span class="w" data-t="126.90">to</span> <span class="w" data-t="127.06">look</span> <span class="w" data-t="127.31">beyond</span> <span class="w" data-t="127.85">appearances</span> <span class="w" data-t="128.56">and</span> <span class="w" data-t="128.68">understand</span> <span class="w" data-t="129.15">what</span> <span class="w" data-t="129.69">really</span> <span class="w" data-t="130.03">matters</span> <span class="w" data-t="130.49">in</span> <span class="w" data-t="130.62">life.</span></p>
+        </div>
+      </article>
+      <article class="art" id="a4" data-author="Ammar Rabie" data-n="4" data-audio="ammar-rabie.mp3">
+        <div class="section-label"><span>Social Columnist</span><span>Article 4 · The Counter-Perspective</span></div>
+        <h2><span class="w" data-t="0.93">The</span> <span class="w" data-t="3.03">Need</span> <span class="w" data-t="3.26">Of</span> <span class="w" data-t="3.35">Approval:</span> <span class="w" data-t="4.11">Is</span> <span class="w" data-t="4.27">A</span> <span class="w" data-t="4.31">Little</span> <span class="w" data-t="4.62">Social-Approval</span> <span class="w" data-t="5.75">Really</span> <span class="w" data-t="6.04">That</span> <span class="w" data-t="6.23">Bad?</span></h2>
+        <div class="byline">By Ammar Rabie </div>
+        
+        <div class="story">
           <p><span class="w" data-t="6.59">Although</span> <span class="w" data-t="6.90">the</span> <span class="w" data-t="7.06">author</span> <span class="w" data-t="7.43">of</span> <span class="w" data-t="7.59">The</span> <span class="w" data-t="7.66">Little</span> <span class="w" data-t="7.93">Prince</span> <span class="w" data-t="8.43">shows</span> <span class="w" data-t="8.63">that</span> <span class="w" data-t="8.84">any</span> <span class="w" data-t="9.03">desire</span> <span class="w" data-t="9.42">for</span> <span class="w" data-t="9.58">social</span> <span class="w" data-t="9.95">approval</span> <span class="w" data-t="10.56">is</span> <span class="w" data-t="10.66">simply</span> <span class="w" data-t="11.00">foolish,</span> <span class="w" data-t="11.89">refusing</span> <span class="w" data-t="12.40">all</span> <span class="w" data-t="12.57">possible</span> <span class="w" data-t="13.06">forms</span> <span class="w" data-t="13.70">of</span> <span class="w" data-t="13.80">social</span> <span class="w" data-t="14.42">recognition/approval,</span> <span class="w" data-t="15.81">this</span> <span class="w" data-t="16.42">ignores</span> <span class="w" data-t="16.87">the</span> <span class="w" data-t="16.95">natural</span> <span class="w" data-t="17.54">and</span> <span class="w" data-t="17.74">biological</span> <span class="w" data-t="18.39">human</span> <span class="w" data-t="18.68">need</span> <span class="w" data-t="19.04">to</span> <span class="w" data-t="19.17">be</span> <span class="w" data-t="19.29">valued,</span> <span class="w" data-t="20.54">and</span> <span class="w" data-t="20.68">that</span> <span class="w" data-t="20.83">applies</span> <span class="w" data-t="21.25">especially</span> <span class="w" data-t="21.98">in</span> <span class="w" data-t="22.11">modern</span> <span class="w" data-t="22.41">day</span> <span class="w" data-t="22.58">society</span> <span class="w" data-t="23.76">where</span> <span class="w" data-t="23.85">that</span> <span class="w" data-t="24.10">need</span> <span class="w" data-t="24.61">is</span> <span class="w" data-t="24.88">at</span> <span class="w" data-t="25.17">its</span> <span class="w" data-t="25.30">absolute</span> <span class="w" data-t="25.83">peak.</span></p>
           <p><span class="w" data-t="26.95">For</span> <span class="w" data-t="27.08">example,</span> <span class="w" data-t="27.61">the</span> <span class="w" data-t="27.87">absolute</span> <span class="w" data-t="28.36">need</span> <span class="w" data-t="28.61">for</span> <span class="w" data-t="28.78">a</span> <span class="w" data-t="28.83">little</span> <span class="w" data-t="29.07">social</span> <span class="w" data-t="29.43">approval</span> <span class="w" data-t="30.19">in</span> <span class="w" data-t="30.32">modern</span> <span class="w" data-t="30.64">day</span> <span class="w" data-t="30.77">society</span> <span class="w" data-t="31.93">is</span> <span class="w" data-t="32.01">specifically</span> <span class="w" data-t="32.68">highlighted</span> <span class="w" data-t="33.21">in</span> <span class="w" data-t="33.31">chapter</span> <span class="w" data-t="33.65">4,</span> <span class="w" data-t="34.61">where</span> <span class="w" data-t="34.71">the</span> <span class="w" data-t="34.83">astronomer</span> <span class="w" data-t="35.78">was</span> <span class="w" data-t="36.01">completely</span> <span class="w" data-t="36.81">ignored</span> <span class="w" data-t="37.19">for</span> <span class="w" data-t="37.28">wearing</span> <span class="w" data-t="37.43">regular</span> <span class="w" data-t="37.69">traditional</span> <span class="w" data-t="38.14">clothing,</span> <span class="w" data-t="39.50">but</span> <span class="w q" data-t="40.94">“presented</span> <span class="w q" data-t="41.41">his</span> <span class="w q" data-t="41.50">discovery</span> <span class="w q" data-t="42.03">again</span> <span class="w q" data-t="42.38">in</span> <span class="w q" data-t="42.54">1920,</span> <span class="w q" data-t="43.69">when</span> <span class="w q" data-t="43.81">he</span> <span class="w q" data-t="43.91">dressed</span> <span class="w q" data-t="44.28">elegantly</span> <span class="w q" data-t="44.89">in</span> <span class="w q" data-t="44.95">European</span> <span class="w q" data-t="45.46">attire</span> <span class="w q" data-t="46.23">and</span> <span class="w q" data-t="46.36">this</span> <span class="w q" data-t="46.54">time</span> <span class="w q" data-t="47.03">everybody</span> <span class="w q" data-t="47.59">believed</span> <span class="w q" data-t="47.96">him.”</span> <span class="w" data-t="50.23">This</span> <span class="w" data-t="50.48">shows</span> <span class="w" data-t="50.74">without</span> <span class="w" data-t="51.00">a</span> <span class="w" data-t="51.04">degree</span> <span class="w" data-t="51.39">of</span> <span class="w" data-t="51.45">social</span> <span class="w" data-t="51.84">approval</span> <span class="w" data-t="52.37">or</span> <span class="w" data-t="52.50">confirmation</span> <span class="w" data-t="53.22">from</span> <span class="w" data-t="53.41">society,</span> <span class="w" data-t="54.86">brilliance</span> <span class="w" data-t="55.33">and</span> <span class="w" data-t="55.50">truth</span> <span class="w" data-t="55.97">can</span> <span class="w" data-t="56.16">be</span> <span class="w" data-t="56.25">completely</span> <span class="w" data-t="56.76">ignored,</span> <span class="w" data-t="57.77">this</span> <span class="w" data-t="57.96">displays</span> <span class="w" data-t="58.57">that</span> <span class="w" data-t="58.75">seeking</span> <span class="w" data-t="59.12">approval</span> <span class="w" data-t="59.51">from</span> <span class="w" data-t="59.72">society</span> <span class="w" data-t="60.34">is</span> <span class="w" data-t="60.48">not</span> <span class="w" data-t="60.84">just</span> <span class="w" data-t="61.03">a</span> <span class="w" data-t="61.08">foolish</span> <span class="w" data-t="61.48">reaction,</span> <span class="w" data-t="62.71">but</span> <span class="w" data-t="62.91">rather</span> <span class="w" data-t="63.26">a</span> <span class="w" data-t="63.29">highly</span> <span class="w" data-t="63.65">practical</span> <span class="w" data-t="64.21">tool</span> <span class="w" data-t="64.87">for</span> <span class="w" data-t="65.01">respect</span> <span class="w" data-t="65.60">and</span> <span class="w" data-t="65.72">acceptance</span> <span class="w" data-t="66.43">in</span> <span class="w" data-t="66.58">the</span> <span class="w" data-t="66.66">world.</span></p>
           <p><span class="w" data-t="67.58">Further</span> <span class="w" data-t="67.76">exploring,</span> <span class="w" data-t="68.68">while</span> <span class="w" data-t="68.84">the</span> <span class="w" data-t="68.98">author</span> <span class="w" data-t="69.25">was</span> <span class="w" data-t="69.42">correctly</span> <span class="w" data-t="69.94">cautious</span> <span class="w" data-t="70.28">about</span> <span class="w" data-t="70.55">public</span> <span class="w" data-t="70.90">judgment,</span> <span class="w" data-t="71.71">calling</span> <span class="w" data-t="72.03">the</span> <span class="w" data-t="72.10">entire</span> <span class="w" data-t="72.65">desire</span> <span class="w" data-t="72.98">for</span> <span class="w" data-t="73.14">recognition</span> <span class="w" data-t="73.69">foolish</span> <span class="w" data-t="74.13">is</span> <span class="w" data-t="74.29">simply</span> <span class="w" data-t="74.71">too</span> <span class="w" data-t="74.89">far.</span> <span class="w" data-t="75.53">In</span> <span class="w" data-t="75.68">modern</span> <span class="w" data-t="76.02">day</span> <span class="w" data-t="76.15">society,</span> <span class="w" data-t="77.26">gaining</span> <span class="w" data-t="77.51">positive</span> <span class="w" data-t="78.02">feedback</span> <span class="w" data-t="78.43">is</span> <span class="w" data-t="78.58">a</span> <span class="w" data-t="78.65">mental</span> <span class="w" data-t="79.05">catalyst</span> <span class="w" data-t="79.66">that</span> <span class="w" data-t="79.94">builds</span> <span class="w" data-t="80.22">self</span> <span class="w" data-t="80.46">confidence,</span> <span class="w" data-t="81.12">increases</span> <span class="w" data-t="81.66">productivity</span> <span class="w" data-t="82.69">and</span> <span class="w" data-t="82.91">further</span> <span class="w" data-t="83.45">builds</span> <span class="w" data-t="83.73">social</span> <span class="w" data-t="84.11">relationships.</span> <span class="w" data-t="85.37">According</span> <span class="w" data-t="85.80">to</span> <span class="w" data-t="85.94">research</span> <span class="w" data-t="86.38">by</span> <span class="w" data-t="86.52">the</span> <span class="w" data-t="86.60">American</span> <span class="w" data-t="87.17">Psychological</span> <span class="w" data-t="87.82">Association,</span> <span class="w" data-t="89.18">positive</span> <span class="w" data-t="89.68">praise</span> <span class="w" data-t="90.12">or</span> <span class="w" data-t="90.25">valuation</span> <span class="w" data-t="90.93">is</span> <span class="w" data-t="91.16">needed</span> <span class="w" data-t="92.19">for</span> <span class="w" data-t="92.34">healthy</span> <span class="w" data-t="92.64">mental</span> <span class="w" data-t="92.95">health.</span> <span class="w" data-t="93.92">Whether</span> <span class="w" data-t="94.27">it&#x27;s</span> <span class="w" data-t="94.43">a</span> <span class="w" data-t="94.46">student</span> <span class="w" data-t="94.90">seeking</span> <span class="w" data-t="95.23">praise</span> <span class="w" data-t="95.51">from</span> <span class="w" data-t="95.66">his</span> <span class="w" data-t="95.82">teacher</span> <span class="w" data-t="96.46">or</span> <span class="w" data-t="96.59">an</span> <span class="w" data-t="96.68">author</span> <span class="w" data-t="97.05">seeking</span> <span class="w" data-t="97.37">praise</span> <span class="w" data-t="97.62">for</span> <span class="w" data-t="97.70">his</span> <span class="w" data-t="97.84">writing,</span> <span class="w" data-t="98.31">social</span> <span class="w" data-t="98.57">recognition/approval</span> <span class="w" data-t="99.95">is</span> <span class="w" data-t="100.10">a</span> <span class="w" data-t="100.17">natural</span> <span class="w" data-t="100.80">biological</span> <span class="w" data-t="101.46">mechanism</span> <span class="w" data-t="102.48">designed</span> <span class="w" data-t="103.00">to</span> <span class="w" data-t="103.06">keep</span> <span class="w" data-t="103.26">us</span> <span class="w" data-t="103.36">connected.</span> <span class="w" data-t="104.20">It&#x27;s</span> <span class="w" data-t="104.35">not</span> <span class="w" data-t="104.48">an</span> <span class="w" data-t="104.55">act</span> <span class="w" data-t="104.76">of</span> <span class="w" data-t="104.90">foolishness</span> <span class="w" data-t="105.42">or</span> <span class="w" data-t="105.50">a</span> <span class="w" data-t="105.55">sign</span> <span class="w" data-t="105.82">of</span> <span class="w" data-t="105.95">moral</span> <span class="w" data-t="106.23">weakness.</span> <span class="w" data-t="107.11">While</span> <span class="w" data-t="107.29">it</span> <span class="w" data-t="107.45">is</span> <span class="w" data-t="107.63">true</span> <span class="w" data-t="107.83">that</span> <span class="w" data-t="108.05">chasing</span> <span class="w" data-t="108.59">mindless</span> <span class="w" data-t="109.33">internet</span> <span class="w" data-t="109.81">clout</span> <span class="w" data-t="110.17">and</span> <span class="w" data-t="110.31">fame</span> <span class="w" data-t="111.05">is</span> <span class="w" data-t="111.17">a</span> <span class="w" data-t="111.20">certain</span> <span class="w" data-t="111.61">trap,</span> <span class="w" data-t="112.51">we</span> <span class="w" data-t="112.82">all</span> <span class="w" data-t="113.21">need</span> <span class="w" data-t="113.46">just</span> <span class="w" data-t="113.69">a</span> <span class="w" data-t="113.72">little</span> <span class="w" data-t="114.15">social</span> <span class="w" data-t="114.55">approval</span> <span class="w" data-t="115.00">to</span> <span class="w" data-t="115.10">continue</span> <span class="w" data-t="115.51">as</span> <span class="w" data-t="115.64">a</span> <span class="w" data-t="115.71">functional</span> <span class="w" data-t="116.37">society.</span> <span class="w" data-t="117.55">Expecting</span> <span class="w" data-t="118.09">humans</span> <span class="w" data-t="118.51">to</span> <span class="w" data-t="118.59">completely</span> <span class="w" data-t="119.42">abandon</span> <span class="w" data-t="119.91">the</span> <span class="w" data-t="120.00">need</span> <span class="w" data-t="120.23">for</span> <span class="w" data-t="120.40">valuation</span> <span class="w" data-t="121.05">is</span> <span class="w" data-t="121.18">not</span> <span class="w" data-t="121.41">only</span> <span class="w" data-t="121.70">unrealistic,</span> <span class="w" data-t="123.05">but</span> <span class="w" data-t="123.35">misunderstands</span> <span class="w" data-t="124.19">the</span> <span class="w" data-t="124.29">problem</span> <span class="w" data-t="124.82">in</span> <span class="w" data-t="124.92">its</span> <span class="w" data-t="125.07">entirety.</span></p>
         </div>
+      </article>
 
-        <div class="player" id="player" role="group" aria-label="Audio player">
-          <button class="play" id="play" aria-label="Play article audio">
-            <svg class="go" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>
-            <svg class="pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
-          </button>
-          <span class="t" id="cur">0:00</span>
-          <input class="scrub" id="scrub" type="range" min="0" max="1000" value="0" aria-label="Seek">
-          <span class="t total" id="tot">0:00</span>
-          <button class="spd" id="spd" aria-label="Playback speed">1×</button>
-        </div>
+      <div class="later"><span><b>Article 5 · The Future Roadmap</b></span><span>Salman Ahmad · coming soon</span></div>
 
-        <div class="sources" id="sources">
-          <h3>Sources</h3>
-          <ul>
-            <li><i>The Little Prince</i> by Antoine de Saint-Exupéry</li>
-            <li>American Psychological Association</li>
-          </ul>
-        </div>
+      <div class="player" id="player" role="group" aria-label="Audio player">
+        <button class="play" id="play" aria-label="Play the edition">
+          <svg class="go" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>
+          <svg class="pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+        </button>
+        <button class="skip" id="prev" aria-label="Previous voiced article"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+        <button class="skip" id="next" aria-label="Next voiced article"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 5h2v14h-2zM4 5l11 7-11 7z"/></svg></button>
+        <div class="meta"><small id="mk">Listen</small><span id="mn">Voices play in order</span></div>
+        <span class="t" id="cur">0:00</span>
+        <input class="scrub" id="scrub" type="range" min="0" max="1000" value="0" aria-label="Seek">
+        <span class="t total" id="tot">0:00</span>
+        <button class="spd" id="spd" aria-label="Playback speed">1×</button>
+      </div>
+
+      <div class="sources" id="sources">
+        <h3>Sources</h3>
+        <ul>
+          <li><i>The Little Prince</i> by Antoine de Saint-Exupéry</li>
+          <li>American Psychological Association</li>
+        </ul>
+      </div>
       </div>
     </div>
   </section>
 </div>
 </main>
 
-<footer>Written and read by Ammar Rabie · 9B–C</footer>
-
-<audio id="audio" preload="auto" src="ammar-rabie.mp3"></audio>
+<footer>The Intergalactic Gazette · Year 9 English · 9B–C</footer>
 
 <script>
 (function(){
@@ -246,62 +302,101 @@ footer{border-top:1px solid #ffffff1f;color:#a8aed4;font-family:var(--ui);font-s
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 
-  /* ---------- audio sync ---------- */
-  var a=document.getElementById('audio'),play=document.getElementById('play'),player=document.getElementById('player'),
-      scrub=document.getElementById('scrub'),cur=document.getElementById('cur'),tot=document.getElementById('tot'),spd=document.getElementById('spd');
-  var words=[].slice.call(document.querySelectorAll('h2 .w, .story .w'));
-  var times=words.map(function(w){return parseFloat(w.dataset.t)});
-  var paras=[].slice.call(document.querySelectorAll('.story p'));
-  var idx=-1,lastUser=0,OFFSET=0.03,raf=0;
+  
+  /* ---------- edition audio ---------- */
+  var arts=[].slice.call(document.querySelectorAll('.art')).map(function(el){
+    var ws=[].slice.call(el.querySelectorAll('.w'));
+    return {el:el,src:el.dataset.audio||'',name:el.dataset.author,n:el.dataset.n,words:ws,
+      times:ws.map(function(w){return parseFloat(w.dataset.t)}),idx:-1};
+  });
+  var voiced=arts.filter(function(x){return x.src});
+  var a=new Audio(),pre=null,cur=null,rate=1,lastUser=0,OFFSET=0.03,raf=0;
+  a.preload='auto';
+  var play=document.getElementById('play'),player=document.getElementById('player'),scrub=document.getElementById('scrub'),
+      curT=document.getElementById('cur'),tot=document.getElementById('tot'),spd=document.getElementById('spd'),
+      mk=document.getElementById('mk'),mn=document.getElementById('mn'),
+      prev=document.getElementById('prev'),next=document.getElementById('next');
   function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2)}
-  function find(t){var lo=0,hi=times.length-1,r=-1;while(lo<=hi){var m=(lo+hi)>>1;if(times[m]<=t){r=m;lo=m+1}else hi=m-1}return r}
-  function setIdx(n){
-    if(n===idx)return;
-    var from=Math.min(idx,n),to=Math.max(idx,n);
-    if(Math.abs(n-idx)>3||idx<0){from=0;to=words.length-1}
-    for(var i=Math.max(0,from);i<=to;i++){
-      var w=words[i];
-      w.classList.toggle('said',i<=n);
-      w.classList.toggle('now',i===n);
-    }
-    idx=n;
-    var cw=words[n];
-    paras.forEach(function(p){p.classList.toggle('on',!!cw&&p.contains(cw))});
+  function find(ts,t){var lo=0,hi=ts.length-1,r=-1;while(lo<=hi){var m=(lo+hi)>>1;if(ts[m]<=t){r=m;lo=m+1}else hi=m-1}return r}
+  function markAll(x,on){x.words.forEach(function(w){w.classList.toggle('said',on);w.classList.remove('now')});x.idx=on?x.words.length-1:-1}
+  function setIdx(x,n){
+    if(n===x.idx)return;
+    var from=Math.min(x.idx,n),to=Math.max(x.idx,n);
+    if(Math.abs(n-x.idx)>3||x.idx<0){from=0;to=x.words.length-1}
+    for(var i=Math.max(0,from);i<=to;i++){var w=x.words[i];w.classList.toggle('said',i<=n);w.classList.toggle('now',i===n)}
+    x.idx=n;
+    var cw=x.words[n];
     if(cw&&!a.paused&&Date.now()-lastUser>2500){
       var r=cw.getBoundingClientRect(),h=innerHeight;
-      if(r.top<h*.22||r.bottom>h*.62){
-        cw.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
-      }
+      if(r.top<h*.22||r.bottom>h*.62)cw.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
     }
   }
+  function label(){
+    if(!cur){mk.textContent='Listen';mn.textContent='Voices play in order';return}
+    mk.textContent='Article '+cur.n+' of '+arts.length;mn.textContent=cur.name;
+  }
   function ui(){
+    if(!cur)return;
     var t=a.currentTime,d=a.duration||0;
-    setIdx(find(t+OFFSET));
-    if(d){var p=t/d*1000;scrub.value=p;scrub.style.setProperty('--p',(p/10)+'%');}
-    cur.textContent=fmt(t);
+    setIdx(cur,find(cur.times,t+OFFSET));
+    if(d){var p=t/d*1000;scrub.value=p;scrub.style.setProperty('--p',(p/10)+'%')}
+    curT.textContent=fmt(t);
   }
   function loop(){ui();if(!a.paused)raf=requestAnimationFrame(loop)}
+  function load(x,t,go){
+    if(cur!==x){
+      cur=x;a.src=x.src;a.playbackRate=rate;
+      var c=voiced.indexOf(x);
+      voiced.forEach(function(y,k){if(k<c)markAll(y,true);else if(k>c)markAll(y,false)});
+      x.idx=-2;tot.textContent='0:00';scrub.value=0;scrub.style.setProperty('--p','0%');
+      label();
+      var nx=voiced[c+1];
+      if(nx){pre=new Audio();pre.preload='auto';pre.src=nx.src}
+    }
+    function seek(){if(t>0)a.currentTime=t;ui()}
+    if(a.readyState>=1)seek();else a.addEventListener('loadedmetadata',function f(){a.removeEventListener('loadedmetadata',f);seek()});
+    if(go){var pr=a.play();if(pr&&pr.catch)pr.catch(function(){})}
+  }
+  function toArt(x){x.el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}
   a.addEventListener('loadedmetadata',function(){tot.textContent=fmt(a.duration);ui()});
-  if(a.readyState>=1)tot.textContent=fmt(a.duration);
   a.addEventListener('durationchange',function(){if(a.duration)tot.textContent=fmt(a.duration)});
-  a.addEventListener('play',function(){player.classList.add('playing');play.setAttribute('aria-label','Pause article audio');cancelAnimationFrame(raf);loop()});
-  a.addEventListener('pause',function(){player.classList.remove('playing');play.setAttribute('aria-label','Play article audio')});
-  a.addEventListener('ended',function(){player.classList.remove('playing');setIdx(words.length-1);words[words.length-1].classList.remove('now')});
+  a.addEventListener('play',function(){player.classList.add('playing');play.setAttribute('aria-label','Pause');cancelAnimationFrame(raf);loop()});
+  a.addEventListener('pause',function(){player.classList.remove('playing');play.setAttribute('aria-label','Play')});
   a.addEventListener('seeked',ui);
-  function toggle(){if(a.paused){if(a.ended)a.currentTime=0;a.play()}else a.pause()}
+  a.addEventListener('ended',function(){
+    var i=voiced.indexOf(cur);markAll(cur,true);
+    if(i<voiced.length-1){var nx=voiced[i+1];setTimeout(function(){load(nx,0,true);toArt(nx)},700)}
+    else{player.classList.remove('playing');mk.textContent='End of edition';mn.textContent='Press play to start over';cur.finished=true}
+  });
+  function toggle(){
+    if(!cur||cur.finished){voiced.forEach(function(y){y.finished=false});var f=voiced[0];cur=null;load(f,0,true);toArt(f);return}
+    if(a.paused)a.play();else a.pause();
+  }
+  function skip(d){
+    var i=cur?voiced.indexOf(cur):-1;
+    if(d<0&&cur&&a.currentTime>3){a.currentTime=0;return}
+    var j=Math.min(voiced.length-1,Math.max(0,(i<0?0:i+d)));
+    cur=(cur&&cur.finished)?null:cur;
+    var x=voiced[j];if(x===cur){a.currentTime=0;return}
+    load(x,0,true);toArt(x);
+  }
   play.addEventListener('click',toggle);
-  scrub.addEventListener('input',function(){if(a.duration){a.currentTime=scrub.value/1000*a.duration;idx=-2;ui()}});
-  spd.addEventListener('click',function(){var r=[1,1.25,1.5,.75],n=r[(r.indexOf(a.playbackRate)+1)%r.length];a.playbackRate=n;spd.textContent=n+'×'});
-  document.querySelector('.article').addEventListener('click',function(e){
+  prev.addEventListener('click',function(){skip(-1)});
+  next.addEventListener('click',function(){skip(1)});
+  scrub.addEventListener('input',function(){if(cur&&a.duration){a.currentTime=scrub.value/1000*a.duration;cur.idx=-2;ui()}});
+  spd.addEventListener('click',function(){var r=[1,1.25,1.5,.75],n=r[(r.indexOf(rate)+1)%r.length];rate=n;a.playbackRate=n;spd.textContent=n+'×'});
+  document.querySelector('.col').addEventListener('click',function(e){
     var w=e.target.closest('.w');if(!w)return;
-    a.currentTime=Math.max(0,parseFloat(w.dataset.t)-.02);idx=-2;ui();if(a.paused)a.play();
+    var x=arts.filter(function(y){return y.el.contains(w)})[0];if(!x||!x.src)return;
+    if(cur&&cur.finished)cur.finished=false;
+    load(x,Math.max(0,parseFloat(w.dataset.t)-.02),true);x.idx=-2;if(cur===x)ui();
   });
   ['wheel','touchmove'].forEach(function(ev){addEventListener(ev,function(){lastUser=Date.now()},{passive:true})});
   addEventListener('keydown',function(e){
     var t=e.target.tagName;if(t==='INPUT'||t==='BUTTON'||t==='A')return;
     if(e.code==='Space'){e.preventDefault();toggle()}
-    else if(e.code==='ArrowRight'){a.currentTime=Math.min(a.duration,a.currentTime+5)}
-    else if(e.code==='ArrowLeft'){a.currentTime=Math.max(0,a.currentTime-5)}
+    else if(cur&&e.code==='ArrowRight'){a.currentTime=Math.min(a.duration,a.currentTime+5)}
+    else if(cur&&e.code==='ArrowLeft'){a.currentTime=Math.max(0,a.currentTime-5)}
   });
 })();
 </script>
